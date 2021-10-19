@@ -16,6 +16,11 @@
       "url": "https://github.com/DefLeppard333/pulse/issues"
    },
    "homepage": "https://github.com/DefLeppard333/pulse#readme",
+   "browserslist": [
+      "defaults",
+      "not IE 11",
+      "maintained node versions"
+   ],
    "devDependencies": {
       "browser-sync": "^2.27.5",
       "gulp": "^4.0.2",
