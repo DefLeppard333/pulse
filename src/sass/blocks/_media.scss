@@ -16,6 +16,11 @@
          width: 220px;
       }
    }
+   .consultation {
+      &__wrapper {
+         padding: 0 20px;
+      }
+   }
 }
 @media (max-width: 767px) {
    .button {
@@ -45,9 +50,29 @@
       &__wrapper {
          padding-top: 0;
          flex-wrap: wrap;
+         justify-content: space-evenly;
       }
       &__item {
          padding-top: 30px;
+      }
+   }
+   .consultation {
+      &__wrapper {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+      .title {
+         &_left {
+            font-size: 25px;
+            text-align: center;
+            width: 400px;
+         }
+      }
+      &__descr {
+         font-size: 16px;
+         width: 100%;
+         text-align: center;
       }
    }
 }
@@ -98,6 +123,14 @@
    .advantages {
       &__wrapper {
          justify-content: center;
+      }
+   }
+   .consultation {
+      .title {
+         &_left {
+            font-size: 20px;
+            width: 300px;
+         }
       }
    }
 }
