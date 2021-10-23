@@ -1,65 +1,66 @@
 .carousel {
    padding: 81px 0px;
    &__inner {
+      // width: 100%;
       width: 750px;
       margin: 0 auto;
-   }
-   .slick-slide {
       img {
          display: block;
-         max-width: 100%;
+         margin: 0 auto;
+         // width: 100%;
       }
    }
-   .slick-prev {
+
+   .prev {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: -66px;
+      left: -25px;
       z-index: 1;
       border: none;
       background-color: white;
    }
-   .slick-next {
+   .next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: -66px;
+      right: -25px;
       z-index: 1;
       border: none;
       background-color: white;
    }
-   .slick-dots {
-      position: absolute;
-      bottom: -25px;
-      display: block;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      text-align: center;
-      li {
-         position: relative;
-         display: inline-block;
-         width: 20px;
-         height: 20px;
-         margin: 0 5px;
-         padding: 0;
-         cursor: pointer;
-      }
-      button {
-         border: none;
-         border-radius: 100%;
-         width: 10px;
-         height: 10px;
-         font-size: 0;
-         padding: 0;
-         background-color: black;
-      }
-      .slick-active button {
-         width: 15px;
-         height: 15px;
-         background-color: $main-color;
-         border: 1px solid rgba(70, 44, 44, 0.5);
-      }
-   }
+   // .slick-dots {
+   //    position: absolute;
+   //    bottom: -25px;
+   //    display: block;
+   //    width: 100%;
+   //    padding: 0;
+   //    margin: 0;
+   //    list-style: none;
+   //    text-align: center;
+   //    li {
+   //       position: relative;
+   //       display: inline-block;
+   //       width: 20px;
+   //       height: 20px;
+   //       margin: 0 5px;
+   //       padding: 0;
+   //       cursor: pointer;
+   //    }
+   //    button {
+   //       border: none;
+   //       border-radius: 100%;
+   //       width: 10px;
+   //       height: 10px;
+   //       font-size: 0;
+   //       padding: 0;
+   //       background-color: black;
+   //    }
+   //    .slick-active button {
+   //       width: 15px;
+   //       height: 15px;
+   //       background-color: $main-color;
+   //       border: 1px solid rgba(70, 44, 44, 0.5);
+   //    }
+   // }
 }

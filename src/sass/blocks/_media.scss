@@ -1,4 +1,12 @@
 @media (max-width: 1024px) {
+   .carousel {
+      .prev {
+         display: none;
+      }
+      .next {
+         display: none;
+      }
+   }
 }
 @media (max-width: 991px) {
    .header {
@@ -78,6 +86,13 @@
          font-size: 16px;
          width: 100%;
          text-align: center;
+      }
+   }
+   .carousel {
+      &__inner {
+         img {
+            width: 100%;
+         }
       }
    }
 }
