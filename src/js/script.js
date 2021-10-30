@@ -59,3 +59,5 @@ changeContent(".catalog-item__back");
 
 
 
+// MODAL
+document.getElementsByName('consultation')
