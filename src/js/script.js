@@ -60,4 +60,33 @@ changeContent(".catalog-item__back");
 
 
 // MODAL
-document.getElementsByName('consultation')
+
+
+
+
+
+function modalOpen(attr) {
+   document.querySelectorAll(attr).forEach((item) => {
+      item.addEventListener('click', function (e) {
+         const id = item.getAttribute('data-model');
+         document.querySelector('.overlay').classList.toggle("overlay_active");
+         document.querySelector('body').classList.add("body_lock");
+         document.getElementById(id).classList.toggle("modal_active");
+      });
+
+   });
+
+};
+
+document.querySelectorAll('.modal__close').forEach((item) => {
+   item.addEventListener('click', function (e) {
+
+      document.querySelector('.overlay').classList.toggle("overlay_active");
+      document.querySelector('body').classList.remove("body_lock");
+      document.getElementById('consultation').classList.toggle("modal_active");
+   });
+});
+
+modalOpen('[data-model="consultation"]');
+modalOpen('[data-model="order"]');
+
