@@ -69,9 +69,9 @@ function modalOpen(attr) {
    document.querySelectorAll(attr).forEach((item) => {
       item.addEventListener('click', function (e) {
          const id = item.getAttribute('data-model');
-         document.querySelector('.overlay').classList.toggle("overlay_active");
+         document.querySelector('.overlay').classList.add("overlay_active");
          document.querySelector('body').classList.add("body_lock");
-         document.getElementById(id).classList.toggle("modal_active");
+         document.getElementById(id).classList.add("modal_active");
       });
 
    });
@@ -81,12 +81,20 @@ function modalOpen(attr) {
 document.querySelectorAll('.modal__close').forEach((item) => {
    item.addEventListener('click', function (e) {
 
-      document.querySelector('.overlay').classList.toggle("overlay_active");
+      document.querySelector('.overlay').classList.remove("overlay_active");
       document.querySelector('body').classList.remove("body_lock");
-      document.getElementById('consultation').classList.toggle("modal_active");
+      document.getElementById('consultation').classList.remove("modal_active");
+      document.getElementById('order').classList.remove("modal_active");
+      document.getElementById('thanks').classList.remove("modal_active");
    });
 });
 
 modalOpen('[data-model="consultation"]');
 modalOpen('[data-model="order"]');
+
+document.querySelectorAll('.button_mini').forEach((item, index) => {
+   item.addEventListener('click', function (e) {
+      document.querySelector('#order .modal__descr').innerText(document.querySelectorAll('catalog-item__subtitle')[index].innerText());
+   });
+});
 
