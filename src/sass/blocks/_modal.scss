@@ -18,16 +18,18 @@
    padding: 38px 35px 40px 35px;
    position: absolute;
    left: 50%;
-   top: 50%;
+   top: -50%;
    transform: translate(-50%, -50%);
    width: 380px;
    min-height: 400px;
    background-color: #f2f2f2;
    opacity: 0;
    visibility: hidden;
+   transition: 0.5s all;
    &_active {
       opacity: 1;
       visibility: visible;
+      top: 50%;
    }
    &__close {
       position: absolute;

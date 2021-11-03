@@ -94,7 +94,8 @@ modalOpen('[data-model="order"]');
 
 document.querySelectorAll('.button_mini').forEach((item, index) => {
    item.addEventListener('click', function (e) {
-      document.querySelector('#order .modal__descr').innerText(document.querySelectorAll('catalog-item__subtitle')[index].innerText());
+      let text = document.querySelectorAll('.catalog-item__subtitle')[index].textContent;
+      document.querySelector('#order .modal__descr').textContent = text;
    });
 });
 
