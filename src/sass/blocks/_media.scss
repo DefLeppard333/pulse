@@ -101,6 +101,9 @@
          width: 100%;
          text-align: center;
       }
+      .button_submit:hover {
+         box-shadow: none;
+      }
    }
    .carousel {
       &__inner {
@@ -190,6 +193,15 @@
       }
       &__phone {
          font-size: 18px;
+      }
+   }
+   .modal {
+      width: 300px;
+   }
+   .feed-form {
+      width: 230px;
+      input {
+         width: 100%;
       }
    }
 }
