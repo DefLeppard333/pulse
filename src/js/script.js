@@ -112,7 +112,12 @@ let generateError = function (item) {
          error.className = 'feed-form__error';
          error.innerHTML = "cannot be blank";
          item.parentElement.insertBefore(error, fields[i]);
+         item.classList.add('_error')
       }
+      if (fields[i].value) {
+         item.classList.remove('_error')
+      }
+
    });
 
 };
@@ -126,7 +131,21 @@ document.querySelectorAll('.feed-form').forEach((item) => {
       e.preventDefault();
       removeValidation(item);
       generateError(item);
+
+      console.log('phone', phone.value);
    });
 });
 
 
+//! mask for phone
+
+
+var elements = document.querySelectorAll('[name="phone"]');
+for (var i = 0; i < elements.length; i++) {
+   var maskOptions = {
+      mask: '+{7} (000) 000-00-00',
+      lazy: true,
+
+   };
+   var mask = IMask(elements[i], maskOptions);
+};
