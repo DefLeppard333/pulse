@@ -62,9 +62,6 @@ changeContent(".catalog-item__back");
 // MODAL
 
 
-
-
-
 function modalOpen(attr) {
    document.querySelectorAll(attr).forEach((item) => {
       item.addEventListener('click', function (e) {
@@ -98,4 +95,38 @@ document.querySelectorAll('.button_mini').forEach((item, index) => {
       document.querySelector('#order .modal__descr').textContent = text;
    });
 });
+
+//! Validation FORMS
+
+let removeValidation = function (item) {
+   item.querySelectorAll('.feed-form__error').forEach(e => {
+      e.remove();
+   });
+};
+let generateError = function (item) {
+   let fields = item.querySelectorAll('.feed-form input');
+   return fields.forEach((item, i) => {
+      if (!fields[i].value) {
+         let error = document.createElement('div');
+         console.log('field is blank', fields[i]);
+         error.className = 'feed-form__error';
+         error.innerHTML = "cannot be blank";
+         item.parentElement.insertBefore(error, fields[i]);
+      }
+   });
+
+};
+document.querySelectorAll('.feed-form').forEach((item) => {
+   let formBtn = item.querySelector('.button-submit'),
+      name = item.querySelector('[name ="name"]'),
+      phone = item.querySelector('[name = "phone"]'),
+      email = item.querySelector('[name = "email"]');
+
+   item.addEventListener('submit', function (e) {
+      e.preventDefault();
+      removeValidation(item);
+      generateError(item);
+   });
+});
+
 

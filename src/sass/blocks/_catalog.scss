@@ -131,11 +131,14 @@
                left: -14px;
                top: 8px;
             }
+            &:last-child::before {
+               content: none;
+            }
          }
       }
       &__back {
          position: absolute;
-         bottom: 0;
+         bottom: -40px;
          left: 50%;
          transform: translateX(calc(-50% - 19px));
          display: block;
