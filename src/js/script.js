@@ -98,54 +98,71 @@ document.querySelectorAll('.button_mini').forEach((item, index) => {
 
 //! Validation FORMS
 
-let removeValidation = function (item) {
-   item.querySelectorAll('.feed-form__error').forEach(e => {
-      e.remove();
-   });
-};
-let generateError = function (item) {
-   let fields = item.querySelectorAll('.feed-form input');
-   return fields.forEach((item, i) => {
-      if (!fields[i].value) {
-         let error = document.createElement('div');
-         console.log('field is blank', fields[i]);
-         error.className = 'feed-form__error';
-         error.innerHTML = "cannot be blank";
-         item.parentElement.insertBefore(error, fields[i]);
-         item.classList.add('_error')
-      }
-      if (fields[i].value) {
-         item.classList.remove('_error')
-      }
+// let removeValidation = function (item) {
+//    item.querySelectorAll('.feed-form__error').forEach(e => {
+//       e.remove();
+//    });
+// };
+// let generateError = function (item) {
+//    let fields = item.querySelectorAll('.feed-form input');
+//    return fields.forEach((item, i) => {
+//       if (!fields[i].value) {
+//          let error = document.createElement('div');
+//          console.log('field is blank', fields[i]);
+//          error.className = 'feed-form__error';
+//          error.innerHTML = "cannot be blank";
+//          item.parentElement.insertBefore(error, fields[i]);
+//          item.classList.add('_error')
+//       }
+//       if (fields[i].value) {
+//          item.classList.remove('_error')
+//       }
 
-   });
+//    });
 
-};
-document.querySelectorAll('.feed-form').forEach((item) => {
-   let formBtn = item.querySelector('.button-submit'),
-      name = item.querySelector('[name ="name"]'),
-      phone = item.querySelector('[name = "phone"]'),
-      email = item.querySelector('[name = "email"]');
+// };
+// document.querySelectorAll('.feed-form').forEach((item) => {
+//    let formBtn = item.querySelector('.button-submit'),
+//       name = item.querySelector('[name ="name"]'),
+//       phone = item.querySelector('[name = "phone"]'),
+//       email = item.querySelector('[name = "email"]');
 
-   item.addEventListener('submit', function (e) {
-      e.preventDefault();
-      removeValidation(item);
-      generateError(item);
+//    item.addEventListener('submit', function (e) {
+//       e.preventDefault();
+//       removeValidation(item);
+//       generateError(item);
 
-      console.log('phone', phone.value);
-   });
-});
+//       console.log('phone', phone.value);
+//    });
+// });
 
 
 //! mask for phone
 
 
-var elements = document.querySelectorAll('[name="phone"]');
-for (var i = 0; i < elements.length; i++) {
-   var maskOptions = {
-      mask: '+{7} (000) 000-00-00',
-      lazy: true,
+// var elements = document.querySelectorAll('[name="phone"]');
+// for (var i = 0; i < elements.length; i++) {
+//    var maskOptions = {
+//       mask: '+{7} (000) 000-00-00',
+//       lazy: true,
 
-   };
-   var mask = IMask(elements[i], maskOptions);
-};
+//    };
+//    var mask = IMask(elements[i], maskOptions);
+// };
+
+//! send form jquery need rewrite to js
+
+$('form').submit(function (e) {
+   e.preventDefault();
+   $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+   }).done(function () {
+      $(this).find("input").val("");
+      $('#consultation, #order').fadeOut();
+      $('#thanks').toggleClass('modal_active');
+      $('form').trigger('reset');
+   });
+   return false;
+});
