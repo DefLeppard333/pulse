@@ -7,6 +7,7 @@ const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 
+
 gulp.task('server', function () {
 
    browserSync({
@@ -38,11 +39,12 @@ gulp.task('html',function(){
 gulp.task('watch', function () {
    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+   gulp.watch("src/js/*.js").on('change', gulp.parallel('js'));
 
 });
 
 gulp.task('js',function(){
-  return  gulp.src("src/js/**/*.js")
+  return  gulp.src('src/js/*.js')
     .pipe(gulp.dest("dist/js"));
 });
 gulp.task('fonts',function(){
