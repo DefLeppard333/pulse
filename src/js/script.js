@@ -1,4 +1,3 @@
-
 const slider = tns({
    container: '.carousel__inner',
    items: 1,
