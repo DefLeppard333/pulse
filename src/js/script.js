@@ -1,3 +1,4 @@
+
 const slider = tns({
    container: '.carousel__inner',
    items: 1,
@@ -39,7 +40,7 @@ document.querySelectorAll('.catalog__tab').forEach((item, index) => {
 
    });
 });
-//! function for chanche card in content tab
+//! function for change card in content tab
 function changeContent(className) {
 
    document.querySelectorAll(className).forEach(function (item, index) {
@@ -166,3 +167,26 @@ $('form').submit(function (e) {
    });
    return false;
 });
+
+//! scrollUP
+
+(()=>{
+  let arrow = document.querySelector('.scrollUp');
+// when user scroll page to 1600px show arrow
+window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    if (document.body.scrollTop > 1600 || document.documentElement.scrollTop > 1600) {
+      arrow.style.display = "block";
+    } else {
+      arrow.style.display = "none";
+    }
+  }
+})();
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+new WOW().init();
+

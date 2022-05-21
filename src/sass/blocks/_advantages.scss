@@ -13,6 +13,12 @@
    &__icons {
       display: block;
       margin: 0 auto;
+      &_animated{
+        animation: heartbeat 1s ease infinite paused;
+        &:hover{
+          animation-play-state: running;
+        }
+      }
    }
    &__descr {
       margin-top: 35px;
@@ -36,3 +42,5 @@
       }
    }
 }
+
+

@@ -8,6 +8,7 @@
    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
    <link rel="stylesheet" href="css/fonts.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
    <!-- <link rel="stylesheet" href="css/slick.css"> -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
    <link rel="stylesheet" href="css/style.min.css">
@@ -18,7 +19,7 @@
 
    <section class="promo">
       <div class="container">
-         <header class="header">
+         <header class="header" id="header">
             <a href="#" class="header__logo">
                <img src="icons/logo.png" alt="logo">
             </a>
@@ -74,7 +75,7 @@
                </div>
             </div>
             <div class="advantages__item">
-               <img src="icons/heart.png" alt="heart" class="advantages__icons">
+               <img src="icons/heart.png" alt="heart" class="advantages__icons advantages__icons_animated">
                <div class="advantages__descr">
                   <h2 class="advantages__header">Заботимся о здоровье</h2>
                   <div class="advantages__text">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу Вашему
@@ -523,7 +524,7 @@
    <section class="feed">
       <div class="container">
          <h2 class="title">отзывы клиентов</h2>
-         <div class="feed-client">
+         <div class="feed-client animate__animated animate__fadeInUp wow" data-wow-delay="0.5s">
             <div class="feed-client__img">
                <img src="img/clients/photo_1.png" alt="client-photo">
             </div>
@@ -542,7 +543,7 @@
                </div>
             </div>
          </div>
-         <div class="feed-client">
+         <div class="feed-client animate__animated animate__fadeInUp wow" data-wow-delay="0.5s">
             <div class="feed-client__img">
                <img src="img/clients/photo_2.png" alt="client-photo">
             </div>
@@ -559,7 +560,7 @@
                </div>
             </div>
          </div>
-         <div class="feed-client">
+         <div class="feed-client animate__animated animate__fadeInUp wow" data-wow-delay="0.5s">
             <div class="feed-client__img">
                <img src="img/clients/photo_3.png" alt="client-photo">
             </div>
@@ -637,12 +638,17 @@
       </div>
    </div>
 
-   <link rel="stylesheet" href="">
+   <!-- <div onclick="" class="scrollUp">
+     <a href="#header"><img src="icons/uparrow.svg" alt="up"></a>
+   </div> -->
+   <button onclick="topFunction()" class="scrollUp"><img src="icons/uparrow.svg" alt="up"></button>
+
    <!-- <script src="js/slick.min.js"></script> -->
    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
    <script src="https://unpkg.com/imask"></script>
+   <script src="js/wow.min.js"></script>
    <script src="js/script.js"></script>
 </body>
 

@@ -1,7 +1,10 @@
 @import "base/variables";
+@import "base/animation";
+;
 
 * {
    font-family: "Museo Sans Cyrl", sans-serif;
+   scroll-behavior: smooth;
 }
 .container {
    max-width: 950px;
@@ -11,6 +14,7 @@
 .heading__hidden {
    display: none;
 }
+
 
 @import "blocks/promo";
 @import "blocks/header";
@@ -25,3 +29,5 @@
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/media";
+@import "blocks/scrollup";
+
